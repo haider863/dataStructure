@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>queue</title>
+
+    <script>
+      let queue = [];
+      let currentSize = queue.length;
+
+      function enqueue(newVal) {
+        queue[currentSize] = newVal;
+        currentSize++;
+      }
+      function Display() {
+        console.log(queue);
+      }
+      function dequeue() {
+        for (let i = 0; i < queue.length; i++) {
+          queue[i] = queue[i + 1];
+        }
+        currentSize--;
+        queue.length = currentSize;
+      }
+      enqueue(20);
+      enqueue(30);
+      enqueue(40);
+      enqueue(50);
+      enqueue(60);
+
+      dequeue();
+      dequeue();
+      dequeue();
+
+      Display();
+    </script>
+  </head>
+  <body>
+    <h1>queue</h1>
+  </body>
+</html>
