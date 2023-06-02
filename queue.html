@@ -6,12 +6,14 @@
       let queue = [];
       let currentSize = queue.length;
 
-      function enqueue(newVal) {
-        queue[currentSize] = newVal;
+      function enqueue() {
+        let Value = document.getElementById(`newVal`).value;
+        queue[currentSize] = Value;
         currentSize++;
       }
       function Display() {
-        console.log(queue);
+          for (let i = 0; i < currentSize; i++) {
+          console.log(queue[i]);
       }
       function dequeue() {
         for (let i = 0; i < queue.length; i++) {
@@ -20,20 +22,14 @@
         currentSize--;
         queue.length = currentSize;
       }
-      enqueue(20);
-      enqueue(30);
-      enqueue(40);
-      enqueue(50);
-      enqueue(60);
-
-      dequeue();
-      dequeue();
-      dequeue();
-
-      Display();
+     
     </script>
   </head>
   <body>
     <h1>queue</h1>
+    <input type="text" id="newVal" />
+    <button onclick="enqueue()">add</button>
+    <button onclick="Display()">display</button>
+    <button onclick="dequeue()">remove</button>
   </body>
 </html>
